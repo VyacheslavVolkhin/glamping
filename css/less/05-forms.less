@@ -1,0 +1,239 @@
+/* ----------------------------------- *\
+			forms elements styles
+\* ----------------------------------- */
+.frm-field-input {
+	display: block;
+	position: relative;
+	line-height: 1;
+	.form-input {
+		height: 65px;
+		padding-top: 17px;
+		padding-right: 40px;
+	}
+	.frm-ico {
+		width: 24px;height: 24px;
+		position: absolute;
+		bottom: 24px;right: 22px;
+		margin: 0 -12px -12px 0 0;
+		z-index: 2;
+		pointer-events: none;
+		filter: var(--filterAttToBase);
+	}
+	.field-title {
+		display: block;
+		position: absolute;
+		top: 8px;left: 0;right: 0;
+		padding: 0 15px;
+		z-index: 2;
+		pointer-events: none;
+		max-width: 100%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		font-size: 12px;
+		line-height: 15px;
+		color: var(--clr-light);
+	}
+}
+.frm-main-subscribe {
+	display: flex;
+	line-height: 1;
+	border-bottom: 1px solid var(--clr-base);
+	&.form-light {
+		border-bottom-color: #F8F5F0;
+		.btn {
+			color: #fff;
+			&:hover {
+				color: #fff;
+				.button-ico {
+					filter: var(--filterWhite);
+				}
+			}
+			.button-ico {
+				filter: var(--filterWhite);
+			}
+		}
+		.form-input {
+			color: #fff;
+			&[placeholder]::-webkit-input-placeholder {color: #fff;}
+			&[placeholder]:-moz-placeholder {color: #fff;}
+			&[placeholder]::-moz-placeholder {color: #fff;}
+			&[placeholder]:-ms-input-placeholder {color: #fff;}
+		}
+	}
+	.field-input {
+		flex: 1;
+	}
+	.form-input {
+		height: 44px;
+		border-radius: 0;
+		border: none;
+		padding: 0 10px 0 0;
+		background: none;
+		box-shadow: none;
+		font-size: 16px;
+		font-weight: 400;
+		text-align: left;
+	}
+	.btn {
+		width: auto;
+		flex-shrink: 0;
+		min-width: 0;
+		font-size: 14px;
+		color: var(--clr-base);
+		background: none;
+		border: none;
+		box-shadow: none;
+		border-radius: 0;
+		padding: 0;
+		height: 44px;
+		&:hover {
+			color: var(--clr-att);
+		}
+	}
+}
+.frm-row,
+.frm-field,
+.frm-row-submit {
+    display: flex;
+    flex-wrap: wrap;
+	position: relative;
+	line-height: 1;
+}
+.frm-field {
+    display: block;
+    width: 100%;
+}
+.frm-select {
+	position: relative;
+	display: block;
+	overflow: hidden;
+    line-height: 1;
+	input {
+		display: block;
+		position: absolute;
+		top: 0;left: 0;
+		width: 0;height: 0;
+		opacity: 0;
+		margin: 0;
+		padding: 0;
+		&:checked {
+			&~label {
+				&:after {
+					opacity: 1;
+				}
+			}
+		}
+	}
+	label {
+		display: block;
+		position: relative;
+		cursor: pointer;
+        &:before, &:after {
+            content: "";
+            display: block;
+            position: absolute;
+        }
+		&:after {
+			opacity: 0;
+		}
+	}
+}
+
+
+.frm-select {
+	input {
+		&[type="radio"] {
+			&~label {
+				&:before {
+					border-radius: 50%;
+				}
+				&:after {
+					width: 8px;height: 8px;
+					margin: -4px 0 0 -4px;
+					border-radius: 50%;
+					background: #000;
+				}
+			}
+		}
+		&:checked {
+			&~label {
+				&:after {
+					opacity: 1;
+				}
+			}
+		}
+	}
+	label {
+		position: relative;
+		z-index: 2;
+		padding-left: 36px;
+		min-height: 26px;
+		font-size: 12px;
+		line-height: 1.25;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		color: var(--clr-light);
+		&:before, &:after {
+			width: 26px;height: 26px;
+			border-radius: 10px;
+			border: 1px solid var(--clr-att);
+			top: 50%;left: 13px;
+			margin: -13px 0 0 -13px;
+		}
+		&:after {
+			border-radius: 0;
+			border: none;
+			background: url(../img/icons/chk.svg) center / 16px auto no-repeat;
+			opacity: 0;
+		}
+	}
+	a {
+		color: inherit;
+		&:hover {
+			color: var(--clr-att);
+		}
+	}
+}
+.frm-popup {
+	.frm-row, .frm-row-submit {
+		margin: 0 -5px;
+		gap: 0;
+	}
+	.frm-field {
+		width: 100%;
+		padding: 0 5px;
+		margin-bottom: 10px;
+	}
+	.field-info {
+		margin-bottom: 30px;;
+	}
+	.field-submit {
+		text-align: center;
+		.btn {
+		}
+	}
+}
+@media (min-width: 768px) {
+	.frm-popup {
+		.field-half {
+			width: 50%;
+		}
+		.field-submit {
+			.btn {
+				height: 65px;
+				padding: 0 38px;
+				min-width: 244px;
+			}
+		}
+	}
+}
+@media (min-width: 1024px) {
+	.frm-main-subscribe {
+		.form-input, .btn {
+			height: 50px;
+			font-size: 20px;
+		}
+	}
+}
