@@ -440,7 +440,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				clickable: true,
 			},
 			autoplay: {
-				delay: 40000,
+				delay: 2500,
 				disableOnInteraction: false,
 			},
 			navigation: {
