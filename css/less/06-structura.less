@@ -225,6 +225,17 @@ html.with-fancybox body.hide-scrollbar {
 		height: 4.8rem;
 		flex-shrink: 0;
 	}
+	.btn-action-ico {
+		&.button-soc {
+			img, svg {
+				transition: all ease 0.2s;
+				&~img, &~svg {
+					display: none;
+					filter: none;
+				}
+			}
+		}
+	}
 }
 .footer {
 	background: #16261A;
@@ -322,7 +333,12 @@ html.with-fancybox body.hide-scrollbar {
 	.btn-action-ico {
 		&.button-soc {
 			background: none;
-
+			img, svg {
+				transition: all ease 0.2s;
+				&~img, &~svg {
+					display: none;
+				}
+			}
 		}
 	}
 	.button-soc {
@@ -588,7 +604,13 @@ html.with-fancybox body.hide-scrollbar {
 			}
 			.btn-action-ico {
 				&.button-soc {
-					background: none;;
+					background: none;
+					img, svg {
+						filter: var(--filterWhite);
+						&~img, &~svg {
+							filter: none;
+						}
+					}
 				}
 			}
 			.phone-info {
@@ -642,15 +664,26 @@ html.with-fancybox body.hide-scrollbar {
 			justify-content: flex-end;
 			gap: 1.5rem;
 			flex: 1;
-			img, svg {
-				&~img, &~svg {
-					display: none;
-				}
-			}
 		}
 		.logo {
 			.logo-image {
 				display: block;
+			}
+		}
+		.btn-action-ico {
+			&.button-soc {
+				background: none;
+				img, svg {
+					filter: var(--filterAttToBase);
+				}
+				&:hover {
+					img, svg {
+						display: none;
+						&~img, &~svg {
+							display: block;
+						}
+					}
+				}
 			}
 		}
 		.menu-main {
