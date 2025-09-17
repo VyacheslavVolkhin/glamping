@@ -1,6 +1,20 @@
 /* ----------------------------------- *\
 		common styles
 \* ----------------------------------- */
+
+@keyframes animat {
+    0% {
+        bottom: 0
+    }
+
+    50% {
+        bottom: 10px
+    }
+
+    to {
+        bottom: 0
+    }
+}
 @keyframes flash {
     0% {
         opacity: .55;
@@ -1187,6 +1201,14 @@ input.form-clear-autofill::-webkit-contacts-auto-fill-button {
 	justify-content: space-between;
 	width: 114px;
 	margin: 30px auto 0 auto;
+}
+.swiper-button-disabled {
+	&:has(+.swiper-button-disabled) {
+		display: none;
+	}
+	&+.swiper-button-disabled {
+		display: none;
+	}
 }
 .sl-wrap.swiper-slide {
 	height: auto;

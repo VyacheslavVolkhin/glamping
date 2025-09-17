@@ -9,11 +9,18 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/fancybox.css">
     <link rel="stylesheet" href="./css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/style.min.css">
     <link rel="stylesheet" href="./css/flatpickr.min.css">
+    <script src="./js/popper.min.js" defer></script>
+    <script src="./js/tippy-bundle.umd.min.js" defer></script>
     <script src="./js/flatpickr.js" defer></script>
     <script src="./js/ru.js" defer></script>
     <script src="./js/swiper-bundle.min.js" defer></script>
@@ -37,6 +44,14 @@
                         <div class="logo-title">
                             <img src="./img/main/logo-title.svg" alt="">
                         </div>
+                    </a>
+                </div>
+                <div class="phone-inner-wrap">
+                    <a href="tel:89774944334" class="btn-phone">
+                        <div class="button-ico">
+                            <img src="./img/icons/phone.svg" alt="">
+                        </div>
+                        <div class="button-title">+7 (977) 494-43-34</div>
                     </a>
                 </div>
                 <div class="popup-menu-wrap menu-outer-wrap js-popup-wrap">
@@ -430,6 +445,7 @@
                     </div>
                     <div class="slider-pagination slider-main-pagination"></div>
                 </div>
+                <a href="" class="elm-scroll"><img src="./img/icons/scroll.svg" alt="">Листать далее</a>
             </div>
             <!--/main-top-box-->
 
@@ -553,19 +569,19 @@
                                 <div class="info-prices-title text-lead">В стоимость аренды также входит</div>
                                 <ul class="menu">
                                     <li>
-                                        <a href="" class="btn button-price">
+                                        <a href="" class="btn button-price" data-title="Текст подсказки">
                                             <div class="button-title">Полотенце</div>
                                             <div class="button-info">Бесплатно</div>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="" class="btn button-price">
+                                        <a href="" class="btn button-price" data-title="Текст подсказки">
                                             <div class="button-title">Шапка для бани войлок</div>
                                             <div class="button-info">Бесплатно</div>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="" class="btn button-price">
+                                        <a href="" class="btn button-price" data-title="Текст подсказки">
                                             <div class="button-title">Чай (травяной)</div>
                                             <div class="button-info">Бесплатно</div>
                                         </a>
@@ -706,8 +722,8 @@
             <!--title-box-->
             <div class="title-box">
                 <div class="title-wrap">
-                    <h2 class="h1-title title-mobile-small section-title">Всё для вашего идеальной рыбалки</h2>
-                    <p>Мы позаботились о том, чтобы у вас было всё необходимое: <br>Всё это можно приобрести за дополнительную плату прямо на месте.</p>
+                    <h2 class="h1-title title-mobile-small section-title">Всё для вашего идеального парения</h2>
+                    <p>Мы позаботились о том, чтобы у вас было всё необходимое. <br>Всё это можно дополнительно приобрести прямо на месте.</p>
                 </div>
             </div>
             <!--/title-box-->
@@ -716,60 +732,43 @@
             <div class="info-prices-box">
                 <ul class="menu">
                     <li>
-                        <a href="" class="btn button-price">
-                            <div class="button-title">Удочка / спиннинг</div>
+                        <a href="" class="btn button-price" data-title="Текст подсказки">
+                            <div class="button-title">Веник дубовый</div>
                             <div class="button-info">400 р</div>
                         </a>
                     </li>
                     <li>
-                        <a href="" class="btn button-price">
-                            <div class="button-title">Катушка и запасная шпуля</div>
+                        <a href="" class="btn button-price" data-title="Текст подсказки">
+                            <div class="button-title">Шапка для бани войлок</div>
                             <div class="button-info">400 р</div>
                         </a>
                     </li>
                     <li>
-                        <a href="" class="btn button-price">
-                            <div class="button-title">Леска (основная + запасная)</div>
+                        <a href="" class="btn button-price" data-title="Текст подсказки">
+                            <div class="button-title">Веник кленовый</div>
                             <div class="button-info">400 р</div>
                         </a>
                     </li>
                     <li>
-                        <a href="" class="btn button-price">
-                            <div class="button-title">Прикормка </div>
+                        <a href="" class="btn button-price" data-title="Текст подсказки">
+                            <div class="button-title">Подстилка</div>
                             <div class="button-info">400 р</div>
                         </a>
                     </li>
                     <li>
-                        <a href="" class="btn button-price">
-                            <div class="button-title">Крючки и грузила</div>
+                        <a href="" class="btn button-price" data-title="Текст подсказки">
+                            <div class="button-title">Веник березовый</div>
                             <div class="button-info">400 р</div>
                         </a>
                     </li>
                     <li>
-                        <a href="" class="btn button-price">
-                            <div class="button-title">Поплавки или фидерная оснастка</div>
-                            <div class="button-info">400 р</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="" class="btn button-price">
-                            <div class="button-title">Подсачек</div>
-                            <div class="button-info">400 р</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="" class="btn button-price">
-                            <div class="button-title">Насадки: черви, кукуруза, опарыш и др.</div>
+                        <a href="" class="btn button-price" data-title="Текст подсказки">
+                            <div class="button-title">Чай и Мед</div>
                             <div class="button-info">400 р</div>
                         </a>
                     </li>
                 </ul>
                 <p>*Наличие, уточняйте у администрации</p>
-                <div class="more-box">
-                    <a href="" class="btn button-text-long">
-                        <div class="button-title">Купить снасти, наживку и прикормку</div>
-                    </a>
-                </div>
             </div>
             <!--/info-prices-box-->
 
@@ -924,8 +923,19 @@
                         <h2 class="h1-title section-title">Немного отзывов о&nbsp;нас</h2>
                     </div>
                     <div class="widget-wrap">
-                        <div class="elm-photo photo-cover">
-                            <img src="./img/widget.jpg" alt="">
+                        <div class="elm-widget">
+                            <div class="w-top-wrap">
+                                <div class="w-total-wrap">
+                                    <div class="w-total">4,8</div>
+                                    <div class="w-all">/5</div>
+                                </div>
+                                <div class="w-info-wrap">
+                                    <div class="w-info">Ваша оценка</div>
+                                </div>
+                            </div>
+                            <div class="w-title-wrap">
+                                <div class="w-title">Рейтинг организации в Яндексе</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1232,15 +1242,19 @@
                             <div class="soc-wrap">
                                 <a href="" class="btn-action-ico button-soc">
                                     <img src="./img/icons/soc-vk-ico.svg" alt="">
+                                    <img src="./img/icons/soc-vk.svg" alt="">
                                 </a>
                                 <a href="" class="btn-action-ico button-soc">
                                     <img src="./img/icons/soc-wa-ico.svg" alt="">
+                                    <img src="./img/icons/soc-wa.svg" alt="">
                                 </a>
                                 <a href="" class="btn-action-ico button-soc">
                                     <img src="./img/icons/soc-tg-ico.svg" alt="">
+                                    <img src="./img/icons/soc-tg.svg" alt="">
                                 </a>
                                 <a href="" class="btn-action-ico button-soc">
                                     <img src="./img/icons/soc-q-ico.svg" alt="">
+                                    <img src="./img/icons/soc-q.svg" alt="">
                                 </a>
                             </div>
                         </div>

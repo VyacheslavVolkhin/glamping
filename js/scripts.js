@@ -6,6 +6,16 @@ document.addEventListener("DOMContentLoaded", function() {
 	});
 
 
+	//tooltip
+	tippy('[data-title]', {
+			content(reference) {
+			const dataTitle = reference.getAttribute('data-title');
+			return dataTitle
+		},
+		allowHTML: true
+	});
+
+
 	//breadcrumbs header position
 	const breadcrumbsBox = document.querySelector('.breadcrumbs-box');
 	const mainTopBox = document.querySelector('.main-top-box');
@@ -429,7 +439,10 @@ document.addEventListener("DOMContentLoaded", function() {
 				el: paginationEl,
 				clickable: true,
 			},
-			autoplay: false,
+			autoplay: {
+				delay: 40000,
+				disableOnInteraction: false,
+			},
 			navigation: {
 				nextEl: nextEl,
 				prevEl: prevEl,
@@ -458,7 +471,10 @@ document.addEventListener("DOMContentLoaded", function() {
 				el: paginationEl,
 				clickable: true,
 			},
-			autoplay: false,
+			autoplay: {
+				delay: 2500,
+				disableOnInteraction: false,
+			},
 			navigation: false,
 		});
 	});

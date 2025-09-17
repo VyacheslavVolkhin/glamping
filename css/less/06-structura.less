@@ -105,6 +105,38 @@ html.with-fancybox body.hide-scrollbar {
 		align-items: center;
 		justify-content: space-between;
 	}
+	.phone-inner-wrap {
+		display: flex;
+		align-items: center;
+		font-size: 18px;
+		font-weight: bold;
+		line-height: 24px;
+		color: var(--clr-base);
+		justify-content: flex-end;
+		padding-right: 15px;
+		flex: 1;
+		.btn-phone {
+			display: inline-flex;
+			align-items: center;
+			flex-shrink: 0;
+			white-space: nowrap;
+			color: var(--clr-base);
+			.button-ico {
+				filter: var(--filterAttToBase);
+				width: 24px;height: 24px;
+				flex-shrink: 0;
+			}
+			.button-title {
+				padding-left: 5px;
+			}
+			&:hover {
+				color: var(--clr-att);
+				.button-ico {
+					filter: none;
+				}
+			}
+		}
+	}
 	.logo-inner-wrap {
 		flex-shrink: 0;
 	}
@@ -287,14 +319,30 @@ html.with-fancybox body.hide-scrollbar {
 		flex-wrap: wrap;
 		gap: 15px;
 	}
+	.btn-action-ico {
+		&.button-soc {
+			background: none;
+
+		}
+	}
 	.button-soc {
 		width: 48px;height: 48px;
 		flex-shrink: 0;
 		&:hover {
 			opacity: 1;
+			img, svg {
+				opacity: 0;
+				&:nth-child(2) {
+					opacity: 1;
+				}
+			}
 		}
 		img, svg {
 			filter: var(--filterWhite);
+			&:nth-child(2) {
+				opacity: 0;
+				filter: none;
+			}
 		}
 	}
 	.btn-menu {
@@ -343,6 +391,18 @@ html.with-fancybox body.hide-scrollbar {
 					}
 				}
 			}
+			.phone-inner-wrap {
+				color: #fff;
+				.btn-phone {
+					color: #fff;
+					.button-ico {
+						filter: var(--filterWhite);
+					}
+					&:hover {
+						color: #fff;
+					}
+				}
+			}
 		}
 	}
     .section-mobile-full {
@@ -377,19 +437,38 @@ html.with-fancybox body.hide-scrollbar {
 			width: 100%;
 			flex-shrink: 0;
 			padding: 30px var(--paddingContainer) 30px var(--paddingContainer);
-			text-align: center;
+			text-align: left;
 		}
 		.phone-wrap {
 			margin-bottom: 15px;
 		}
 		.soc-wrap {
 			display: flex;
-			justify-content: center;
+			justify-content: flex-start;
 			flex-wrap: wrap;
-			gap: 10px;
+			gap: 20px;
+			.button-soc {
+				background: none;
+				border-radius: 0;
+				width: 44px;height: 44px;
+				&:hover {
+					background-color: transparent;
+				}
+				&:before {
+					background: none;
+				}
+				img, svg {
+					filter: var(--filterAttToBase);
+				}
+			}
 		}
 		.btn-menu {
 			padding: 10px var(--paddingContainer);
+			text-align: left;
+			font-size: 16px;
+			line-height: 1.45;
+			padding-top: 5px;
+			padding-bottom: 5px;
 		}
 		.btn-submenu {
 			padding: 5px 0;
@@ -415,16 +494,15 @@ html.with-fancybox body.hide-scrollbar {
 		}
 	}
 	.menu-show {
-		overflow: hidden;
 	}
 	.popup-menu-wrap {
 		.popup-content-block {
+			
 			display: none;
-			position: fixed;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
+			position: absolute;
+			top: 100%;right: 0;
+			width: 340px;
+			max-width: 100dvw;
 			z-index: 100;
 			background: #F2EBE0;
 			flex-direction: column;
@@ -433,6 +511,7 @@ html.with-fancybox body.hide-scrollbar {
 			position: fixed;
 			top: 0;right: 0;
 			z-index: 10;
+			display: none;
 		}
 		.js-btn-popup-toggle.active+.js-popup-block {
 			display: flex !important;
@@ -446,6 +525,26 @@ html.with-fancybox body.hide-scrollbar {
 	}
 	.header .phone-title {
 		font-size: 16px;
+	}
+}
+@media (max-width: 639px) {
+	.header {
+		.phone-inner-wrap {
+			padding-right: 5px;
+			.btn-phone {
+				width: 40px;height: 40px;
+				.button-ico {
+					margin: 0 auto;
+					width: 28px;height: 28px;
+					img, svg {
+						width: 100%;
+					}
+				}
+				.button-title {
+					display: none;
+				}
+			}
+		}
 	}
 }
 @media (min-width: 768px) {
@@ -509,6 +608,9 @@ html.with-fancybox body.hide-scrollbar {
 		border-bottom: 1px solid var(--clr-att);
 		padding: 3rem 0;
 		margin-bottom: 3rem;
+		.phone-inner-wrap {
+			display: none;
+		}
 		.menu-outer-wrap {
 			flex: 1;
 			padding-left: 50px;
@@ -540,6 +642,11 @@ html.with-fancybox body.hide-scrollbar {
 			justify-content: flex-end;
 			gap: 1.5rem;
 			flex: 1;
+			img, svg {
+				&~img, &~svg {
+					display: none;
+				}
+			}
 		}
 		.logo {
 			.logo-image {

@@ -30,7 +30,7 @@ select.form-input, input.form-input-select {
     text-overflow: ellipsis;
     width: 100%;
     padding-right: 30px;
-    background-image: url(../img/icons/arrow-select.svg);
+    //background-image: url(../img/icons/arrow-select.svg);
     background-position: right 20px center;
     background-color: #fff;
     background-repeat: no-repeat;
@@ -182,14 +182,7 @@ select.form-input:required:invalid {
 	font-weight: 400;
 	letter-spacing: normal;
 	width: 100%;
-	&:hover {
-		background-color: var(--clr-att);
-		color: #fff;
-		&:before {
-			background-color: #fff;
-			filter: none;
-		}
-	}
+	
 	&:before {
 		content: "";
 		display: block;
@@ -210,7 +203,25 @@ select.form-input:required:invalid {
 		font-weight: 600;
 		text-align: right;
 	}
+	&:hover {
+		background-color: #fff;
+		color: var(--clr-base);
+		&:before {
+			background-color: var(--clr-att);
+			filter: none;
+		}
+	}
 }
+/* a.button-price {
+	&:hover {
+		background-color: var(--clr-att);
+		color: #fff;
+		&:before {
+			background-color: #fff;
+			filter: none;
+		}
+	}
+} */
 .button-border {
 	&:not(:hover) {
 		color: var(--clr-att);
@@ -286,6 +297,17 @@ select.form-input:required:invalid {
 		filter: var(--filterAttToBase);
 	}
 	&:hover {
+		background: #F2F2F2;
+		border-color: #F2F2F2;
+		color: var(--clr-title);
+		.button-ico {
+			filter: var(--filterAttToBase);
+		}
+	}
+	
+}
+/* a.button-tag {
+	&:hover {
 		background-color: var(--clr-att);
 		border-color: var(--clr-att);
 		color: #fff;
@@ -293,7 +315,7 @@ select.form-input:required:invalid {
 			filter: var(--filterWhite);
 		}
 	}
-}
+} */
 .button-white {
 	border-color: #fff;
 	background-color: #fff;
@@ -417,6 +439,7 @@ select.form-input:required:invalid {
 	&.ico-360 {
 		&:before {
 			background-image: url(../img/icons/360.svg);
+			background-size: 40px auto;
 		}
 	}
 	&.ico-logo {
