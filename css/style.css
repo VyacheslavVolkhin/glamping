@@ -3201,6 +3201,34 @@ html.with-fancybox body.hide-scrollbar {
   font-size: 16px;
   line-height: 1.45;
   color: #fff;
+  position: relative;
+}
+.main-top-box .box-inner-wrap ~ .slider-inner-wrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  right: 0;
+  transform: translateX(-50%);
+  width: 100%;
+}
+.main-top-box .box-inner-wrap ~ .slider-inner-wrap .slider-wrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.main-top-box .box-inner-wrap ~ .slider-inner-wrap .slider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: auto !important;
+}
+.main-top-box .box-inner-wrap ~ .slider-inner-wrap .sl-wrap {
+  height: 100%;
 }
 .main-top-box + .breadcrumbs-box {
   display: none;
@@ -4160,6 +4188,19 @@ body.popup-open {
   display: -ms-flexbox;
   display: flex;
 }
+.popup-outer-box.popup-map .popup-box {
+  padding: 0;
+  width: 457px;
+  border-radius: 0;
+  background: none;
+}
+.popup-outer-box.popup-map .item-tile-rent {
+  padding: 30px;
+}
+.popup-outer-box.popup-map .item-tile-rent .tile-action .btn {
+  width: 100%;
+  min-width: 0;
+}
 .popup-box {
   display: -ms-flexbox;
   display: flex;
@@ -4223,6 +4264,11 @@ body.popup-open {
   }
 }
 @media (max-width: 1023px) {
+  .main-top-box .box-inner-wrap ~ .slider-inner-wrap {
+    width: 100dvw;
+    margin-left: 0;
+    margin-right: 0;
+  }
   .tabs-box.type-second {
     margin: 0 0 15px 0;
     overflow: visible;
