@@ -443,7 +443,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				clickable: true,
 			},
 			autoplay: {
-				delay: 25000,
+				delay: 2500,
 				disableOnInteraction: false,
 			},
 			navigation: {
@@ -532,7 +532,10 @@ document.addEventListener("DOMContentLoaded", function() {
 				el: paginationEl,
 				clickable: true,
 			},
-			autoplay: false,
+			autoplay: {
+				delay: 2500,
+				disableOnInteraction: false,
+			},
 			navigation: false,
 		});
 	});
