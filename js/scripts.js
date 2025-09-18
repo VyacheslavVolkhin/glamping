@@ -283,12 +283,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	document.querySelectorAll(".js-popup-open").forEach(function (element) {
 	element.addEventListener("click", function (e) {
-		document.querySelector(".popup-outer-box").classList.remove("active");
+		//document.querySelector(".popup-outer-box").classList.remove("active");
 		document.body.classList.add("popup-open");
 		for (i=0;i<popupsList.length;i++) {
-			popupsList[i
-				].classList.remove("active");
-			}
+			//popupsList[i].classList.remove("active");
+		}
 
 		popupCurrent = this.getAttribute("data-popup");
 		document
@@ -304,28 +303,43 @@ document.addEventListener("DOMContentLoaded", function() {
 		});
 	});
 	document.querySelectorAll(".js-popup-close").forEach(function (element) {
-	element.addEventListener("click", function (event) {
-		document.body.classList.remove("popup-open");
-		for (i=0;i<popupsList.length;i++) {
-			popupsList[i
-				].classList.remove("active");
+		element.addEventListener("click", function (event) {
+			// Закрываем текущий попап
+			const currentPopup = this.closest('.popup-outer-box');
+			currentPopup.classList.remove('active');
+			
+			// Проверяем, есть ли другие активные попапы
+			const activePopups = document.querySelectorAll('.popup-outer-box.active');
+			
+			// Если активных попапов больше нет, убираем классы с body
+			if (activePopups.length === 0) {
+				document.body.classList.remove("popup-open");
+				document.body.classList.remove("popup-open-scroll");
 			}
-		event.preventDefault();
-		event.stopPropagation();
+			
+			event.preventDefault();
+			event.stopPropagation();
 		});
 	});
-	document.querySelectorAll(".popup-outer-box").forEach(function (element) {
-	element.addEventListener("click", function (event) {
-		if (!event.target.closest(".popup-box")) {
-		document.body.classList.remove("popup-open");
-		document.body.classList.remove("popup-open-scroll");
-		document.querySelectorAll(".popup-outer-box").forEach(function (e) {
-			e.classList.remove("active");
-				});
-		return false;
-			}
-		});
-	});
+	document.querySelectorAll(".popup-outer-box").forEach(function (popup) {
+    popup.addEventListener("click", function (event) {
+        // Если клик был вне контентной области попапа
+        if (!event.target.closest(".popup-box")) {
+            // Делаем текущий попап неактивным
+            this.classList.remove('active');
+            
+            // Проверяем количество активных попапов
+            const hasActivePopup = document.querySelector('.popup-outer-box.active') !== null;
+            
+            // Убираем классы с body только если нет активных попапов
+            if (!hasActivePopup) {
+                document.body.classList.remove("popup-open");
+            }
+            
+            return false;
+        }
+    });
+});
 
 
 	//slider get
